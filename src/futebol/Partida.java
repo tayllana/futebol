@@ -57,8 +57,7 @@ public class Partida {
 
 	@Override
 	public String toString() {
-		return "\n PARTIDA \n Local: " + local + "\n Campeonato: " + campeonato + "\n Data: " + data + "\n Time de casa: " + timeCasa.getNome()
-				+ "\n Time de fora: " + timeFora.getNome() + "\n";
+		return "\n ☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵ PARTIDA ☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵  \n Local: " + local + "\n Campeonato: " + campeonato + "\n Data: " + data + "\n Time de casa: " + timeCasa.getNome() + "\n Time de fora: " + timeFora.getNome() + "\n";
 	}
 	
 	

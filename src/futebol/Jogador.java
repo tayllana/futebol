@@ -54,7 +54,7 @@ public class Jogador extends Pessoa{
 
 	@Override
 	public String toString() {
-		return "\n JOGADOR"+ super.toString() +"\n Tamanho Uniforme: " + tamanhoUniforme + "\n Posição: " + posicao + "\n Número Camisa:" + numeroCamisa
+		return super.toString() +"\n Tamanho Uniforme: " + tamanhoUniforme + "\n Posição: " + posicao + "\n Número Camisa:" + numeroCamisa
 				+ "\n Gols Totais:" + golsTotais + "\n";
 	}
 }

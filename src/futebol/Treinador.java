@@ -19,9 +19,6 @@ public class Treinador extends Pessoa {
 	public void planejarJogo() {
 		System.out.println("\n O treinador " + this.getNome() + " está planejando o jogo.");
 	}
-	public void OrganizarEscalacao() {
-		System.out.println("\n O Treinador " + this.getNome() + " está organizando a escalação para o próximo jogo.");
-	}
 
 	@Override
 	public String toString() {

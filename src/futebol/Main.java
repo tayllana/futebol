@@ -6,7 +6,9 @@ import java.util.List;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { 
+//		☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵ REGISTRO DOS JOGADORES ☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵
+		
 		//JOGADORES (Nome, endereço, Nascimento, CPF, telefone, Tamanho do uniforme, posição de jogo, número da camisa e quantidade de gols)
 		Jogador j1 = new Jogador("Cassio Arantes", "Rua Gonçalo de Carvalho – Porto Alegre (RS)", "12/02/1987", "543.759.234-87", 47659634, "M", "Goleiro", 1, 3);
 		Jogador j2 = new Jogador("James Silva", "Alamenda do Mucugê – Arraial d'Ajuda (BA)", "23/12/1985", "143.759.234-00", 87659634, "G", "Lateral direito", 2, 243);
@@ -40,13 +42,34 @@ public class Main {
 		Jogador j27 = new Jogador("Gabriel Silva", "Rua da Lapa – Rio de Janeiro (RJ)", "03/05/1986", "854.759.234-79", 80234567, "M", "Zagueiro Central", 37, 198);
 		Jogador j28 = new Jogador("Vinícius Oliveira", "Avenida JK – Belo Horizonte (MG)", "21/08/1990", "954.759.234-33", 90234567, "P", "Defesa", 38, 251);
 
-
+//		 ☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵ REGISTRO DOS TREINADORES ☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵
 		//TREINADOR (Nome, endereço, Nascimento, CPF, telefone e Categoria de licença)
 		Treinador t1 = new Treinador("Carlos Santos", "Rua das Palmeiras – Manaus (AM)", "08/11/1994", "354.759.234-54", 80234567, "A");
 		Treinador t2 = new Treinador("Felipe Oliveira", "Alameda Santos – São Paulo (SP)", "17/07/1989", "454.759.234-64", 90234567, "PRO");
 
-		//ESCALAÇÃO (Titular e Reserva)
-		Escalacao escalacao = new Escalacao(null, null);
+//		 ☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵ REGISTRO DOS TIMES E ESCALAÇÕES ☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵☵
+		//TIME (nome, serie, escalacao)
+		Time time = new Time("Corinthians", "A", null, t1, null);
+		
+		time.contratar(j1);
+		time.contratar(j2);
+		time.contratar(j3);
+		time.contratar(j4);
+		time.contratar(j5);
+		time.contratar(j6);
+		time.contratar(j7);
+		time.contratar(j8);
+		time.contratar(j9);
+		time.contratar(j10);
+		time.contratar(j11);
+		time.contratar(j23);
+		time.contratar(j24);
+		time.contratar(j25);
+		time.contratar(j26);
+		
+		time.demitir(j26);
+		
+		Escalacao escalacao = new Escalacao(time, null, null);
 		escalacao.addTitular(j1);
 		escalacao.addTitular(j2);
 		escalacao.addTitular(j3);
@@ -59,12 +82,27 @@ public class Main {
 		escalacao.addTitular(j10);
 		escalacao.addTitular(j11);
 		
-		//ADICIONA ELES NA RESERVA
-		escalacao.removerTitular(j23);
-		escalacao.removerTitular(j24);
-		escalacao.removerTitular(j25);
+		time.setEscalacao(escalacao);
 		
-		Escalacao escalacao2 = new Escalacao(null, null);
+//		-----------------------------------------------
+		
+		Time time2 = new Time("Palmeiras", "A", null, t2, null);
+		time2.contratar(j12);
+		time2.contratar(j13);
+		time2.contratar(j14);
+		time2.contratar(j15);
+		time2.contratar(j16);
+		time2.contratar(j17);
+		time2.contratar(j18);
+		time2.contratar(j19);
+		time2.contratar(j20);
+		time2.contratar(j21);
+		time2.contratar(j22);
+		time2.contratar(j26);
+		time2.contratar(j27);
+		time2.contratar(j28);
+		
+		Escalacao escalacao2 = new Escalacao(time2, null, null);
 		escalacao2.addTitular(j12);
 		escalacao2.addTitular(j13);
 		escalacao2.addTitular(j14);
@@ -77,31 +115,26 @@ public class Main {
 		escalacao2.addTitular(j21);
 		escalacao2.addTitular(j22);
 		
-		//ADICIONA ELES NA RESERVA
-		escalacao2.removerTitular(j26);
-		escalacao2.removerTitular(j27);
-		escalacao2.removerTitular(j28);
-		
-		//TIME (nome, serie, escalacao)
-		Time time = new Time("Corinthians", "A", escalacao, t1);
-		Time time2 = new Time("Palmeiras", "A", escalacao2, t2);
+		time2.setEscalacao(escalacao2);
 		
 		//PARTIDA (Data, local, Campeonato, time da casa, time de fora)
 		Partida partida = new Partida("Arena Corinthians", "Brasileirão","17/12/2023", time, time2);
 		
 //		System.out.println(partida);
-//		System.out.println(time);
+//		System.out.println(partida.getTimeCasa());
+//		System.out.println(partida.getTimeFora());
 		
-//		System.out.println(j2);
-//		j2.treinar();
-//		j2.marcarGol();
-//		j2.marcarGol();
-//		j2.marcarGol();
-//		System.out.println(j2);
 		
-		System.out.println(t1);
-		t1.planejarJogo();
-		t1.OrganizarEscalacao();
+		System.out.println(j2);
+		j2.treinar();
+		j2.marcarGol();
+		j2.marcarGol();
+		j2.marcarGol();
+		System.out.println(j2);
+//		
+//		System.out.println(t1);
+//		t1.planejarJogo();
+//		t1.OrganizarEscalacao();
 
 	}
 }
